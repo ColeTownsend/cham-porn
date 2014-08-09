@@ -6,10 +6,10 @@
 	z-index: $base-tier;
 	// overflow: hidden;
 	@include transition(all 1s $ease-in-out-quad);
-	@include retina-image('../images/chx-photo-edit1', 1400px 900px, jpg, '../images/chx-photo-edit1');
+	@include retina-image('../img/chx-photo-edit1', 1400px 900px, jpg, '../img/chx-photo-edit1');
 	// background: $red;
 	@include media($huge) {
-		@include background(url("../images/chx-photo-edit1.jpg"));
+		@include background(url("../img/chx-photo-edit1.jpg"));
 		background-repeat: no-repeat;
 		background-position: center;
 

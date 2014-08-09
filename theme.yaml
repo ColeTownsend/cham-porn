@@ -1,14 +1,18 @@
 theme_name: Cham-porn
 
 site_name: Cham-porn
-    
+
+# social media
 site_twitter: chx-xxx
 site_instagram: chx-xxx
 site_facebook: chx-xxx 
 
-# used in the feed
-site_language: en
+# contact
 contact_email: contact@chx.xxx
+site_phone: +112 003 2320
+
+# quick bites
+site_description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, laboriosam corporis cupiditate. Quaerat laborum doloribus illum ut animi nihil quod?
 
 # Comments + Disqus
 disqus_account: 

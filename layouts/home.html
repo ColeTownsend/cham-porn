@@ -20,7 +20,7 @@
   </head>
   <body>
     
-    {{ theme:partial src="_nav" }}
+    {{ nav from="/" }}<a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ endif }}>{{ title }}</a>{{ /nav }}
 
     <div id="blur">
      {{ layout_content }}
