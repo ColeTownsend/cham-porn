@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {{ _site_name }}
+      {{ if segment_1 }}
+      – {{ title }}
+      {{ endif }}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+        
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/sex.css">
+    <!-- styles -->
+    {{ theme:css src="arrange" tag="true" }}
+    {{ theme:css tag="true" }}
+    <!-- Fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600">
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{{ theme:img src="favicon.png" }}">
+  </head>
+  <body>
+    {{ nav from="/" }}<a href="{{ url }}"{{ if is_current || is_parent }} class="on"{{ endif }}>{{ title }}</a>{{ /nav }}
+
+    <div id="blur">
+     {{ layout_content }}
+    </div>
+
+	<footer>
+	  <div class="inner">
+	    <aside class="third">
+	    	<ul>
+	    		<li>8214 Industry Ave.</li>
+	    		<li>Chamonix, FR</li>
+	    		<li>+0X XX XX XX XX</li>
+	    		<li><a href="mailto:{{ site_email }}">{{ site_email }}</a></li>
+	    	</ul>
+	    </aside>
+	    <aside class="sixth">
+	    	<ul class="horizontal">
+	    		<li><a href="#">Shop</a></li>
+	    		<li><a href="#">Facebook</a></li>
+	    		<li><a href="#">Twitter</a></li>
+	    		<li><a href="#">Instagram</a></li>
+	    	</ul>
+	    </aside>
+	    <aside class="third"><a href="#"><img src="{{ theme:img src="chx-gray.png" }}" alt="" class="logo"></a></aside>
+	    
+	    <small>&copy; 2014 <a target="_blank" href="http://twitter.com/champorn">{{ site_name }}</a></small>
+	  </div>
+	</footer>
+
+<!-- Not Porn Links -->
+
+<script src="/js/jquery-2.1.1.js"></script>
+<script src="/js/nav.js"></script>
+<script src="/js/min/retina-ck.js"></script>
+<script src="{{ theme:js }}"></script>
+
+</body>
+</html>

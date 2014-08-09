@@ -1,0 +1,28 @@
+<nav>
+  <div class="container">
+    <a href="#"><img src="{{ theme:img src="chx-block.png" }}" alt="" class="logo"></a>
+    <span class="menu icon" title="Menu (Esc)" tabindex="0" data-icon="m"><span>Menu</span></span>
+  <div>
+
+  <div id="navigation">
+    <ul>
+      <li><a class="criss" href="{{ homepage }}"{{ if !segment_1 }} class="current criss"{{ endif }}>Home</a></li>
+      <li><a href="/article" class="criss" title="Stories">Stories</a></li>
+      {{ nav from="/" max_depth="4" }}
+      <li><a href="{{ url }}"{{ if is_current || is_parent }} class="current"{{ endif }}>{{ title }} </a>
+       {{ if is_current || is_parent }}
+         {{ if children }}
+          <ul>
+        {{ *recursive children* }}
+          </ul>
+        {{ endif }}
+      {{ endif }}
+      </li>
+
+      <!-- <li><a href="/photoblog" class="criss" title="Lookbook">Lookbook</a></li>
+      <li><a href="/shop" class="criss" title="The Shop">Shop</a></li>
+      <li><a href="/about" class="criss" title="About">About</a></li>
+      <li><a href="/contact" class="criss" title="Contact Us">Contact Us</a></li> -->
+    </ul>
+  </div>
+</nav>

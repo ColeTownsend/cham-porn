@@ -1,0 +1,210 @@
+header[role="storefront"] {
+	@include span-columns(10);
+	@include shift(2);
+
+	// larger than 800px;
+	@include media($small) {
+		@include shift(0);
+		display: block;
+		width: 90%;
+		margin-left: 5%;
+	}
+	
+	// larger than 800px;
+	@include media($medium) {
+		@include span-columns(8);
+		@include shift(1);
+	}
+
+	// larger than 800px;
+	@include media($default) {
+		@include span-columns(10);
+		@include shift(2);
+	}
+
+	// wider than 1280px
+	@include media($large) {
+		@include span-columns(10);
+	}
+
+	padding-top: 12rem;
+	margin-bottom: $base-line-height*2;
+
+	hr {
+		margin-top: $base-line-height/2;
+		margin-bottom: $base-line-height/2;
+	}
+	a {
+		@include link-hover($medium-gray, 50, shadow);
+		position: relative;
+		&:hover, &:active {
+			&:after {
+				content: '';
+				position: absolute;
+				top: -20px;
+				left: -50%;
+				height: 2px;
+				width: 100%;
+				padding: 0 1em;
+				background: $blue;
+			}
+		}
+		&:active {
+			&:after {
+				background: $red;
+			}
+		}
+	}
+	ul {
+		list-style-type: none;
+		li {
+			display: inline-block;
+			margin-right: 2rem;
+			font-size: $fs6;
+			@extend %caps-lock;
+			letter-spacing: 2px;
+		}
+	}
+}
+
+.shop {
+	@extend %container;
+	section {
+		margin: $base-line-height*2 auto;
+	}
+	.wrapper {
+		@include media($small) {
+			@include fill-parent();
+			@include shift(0);
+		}
+		@include media($medium) {
+			@include span-columns(8);
+			@include shift(1);
+		}
+		@include media($default) {
+			@include span-columns(12);
+			@include shift(2);
+		}
+		@include media($large) {
+			@include span-columns(12);
+			@include shift(2);
+		}
+	}
+	aside {
+		margin-bottom: $base-line-height*2;
+		overflow: hidden;
+		// less than 600px
+		@include media($small) {
+			@include reset-all;
+			display: block;
+			width: 90%;
+			margin-left: 5% !important;
+			float: none;
+		}
+
+		// 800 or less
+		@include media($medium) {
+			@include reset-all;
+			@include span-columns(4 of 8);
+			// @include omega(2n);
+			&:nth-child(even) {
+				@include omega();
+			}
+		}
+
+		// less than 1280px
+		@include media($default) {
+			@include reset-all;
+			@include span-columns(4 of 12);
+			&:nth-child(even) {
+				clear: none;
+				margin-right: 2.45904%;
+			}
+			@include omega(3n);
+		}
+		
+		
+		a {
+			@include link-hover($blue, 0, shadow);
+			color: $black;
+		}
+		h6 {
+			text-align: center;
+			font-weight: 500;
+			letter-spacing: 2px;
+			&.product-name {
+				margin-top: $base-line-height/2;
+			}
+			&.price {
+				color: $medium-gray;
+				margin-top: $base-line-height/4;
+			}
+		}
+	}
+}
+
+.product-page {
+	@extend %container;
+	section {
+		margin: $base-line-height*2 auto;
+	}
+	figure {
+		@include media($small) {
+			@include fill-parent();
+			@include shift(0);
+		}
+		@include media($medium) {
+			@include span-columns(5);
+			@include shift(1);
+		}
+		@include media($default) {
+			@include span-columns(7);
+			@include shift(2);
+		}
+		@include media($large) {
+			@include span-columns(7);
+			@include shift(2);
+		}
+
+		// children
+		.thumbs {
+			img {
+				display: inline-block;
+				margin-right: 2px;
+				width: 96px;
+				height: auto;
+			}
+		}
+	}
+	aside {
+		@include media($small) {
+			@include fill-parent();
+		}
+		@include media($medium) {
+			@include span-columns(3);
+			@include omega();
+		}
+		@include media($default) {
+			@include span-columns(5);
+			@include omega();
+		}
+		@include media($large) {
+			@include span-columns(5);
+			@include omega();
+		}
+
+		// children
+		h6 {
+			margin-top: 0;
+		}
+		.purchase {
+			margin-top: $base-line-height*2;
+			width: 100%;
+			text-align: right;
+			.add-to-cart {
+				text-align: center;
+				max-width: 160px;
+			}
+		}
+	}
+}

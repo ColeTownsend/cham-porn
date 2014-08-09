@@ -1,0 +1,23 @@
+theme_name: Cham-porn
+
+site_name: Cham-porn
+    
+site_twitter: chx-xxx
+site_instagram: chx-xxx
+site_facebook: chx-xxx 
+
+# used in the feed
+site_language: en
+contact_email: contact@chx.xxx
+
+# Comments + Disqus
+disqus_account: 
+show_comments: no
+
+# Homepage configuration
+home_post_blocks: 4
+home_photo_blocks: 4
+home_lookbook_blocks: 1
+
+# Global text snippets
+no_results_text: "Sorry, no results found."

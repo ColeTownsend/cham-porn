@@ -1,0 +1,191 @@
+.block-1 {
+	@extend %container;
+	p {
+		@include span-columns(10);
+		@include shift(3);
+		display: block;
+		font-size: 21px;
+		text-align: justify;
+		line-height: em(28, 21);
+		padding: 2*$base-line-height 0;
+		color: $light-black;
+		@include media($small) {
+			font-size: $base-font-size;
+			line-height: $base-line-height;
+		}
+	}
+}
+
+.block {
+	@extend %container;
+	padding-top: 1em;
+	min-height: 464px;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	// small
+	@include media($small) {
+		height: 88vh;
+		max-height: 28rem;
+	}
+	.leftie {
+		@include shift(1);
+		// margin-right: 1rem;
+	}
+	.rightie {
+		@include omega();
+	}
+	// full block images
+	.img-500 {
+		@include span-columns(7);
+		height: 464px;
+		overflow: hidden;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover !important;
+		// &:not(.leftie) {
+		// 	@include omega();
+		// }
+		img {
+			height: auto;
+			width: 100%;
+			@extend %vertical-align;
+			background:$red;
+		}
+	}
+	// triple sets
+	.img-trio {
+		@include span-columns(7);
+		position: relative;
+		height: 464px;
+		// &:not(.leftie) {
+		// 	@include omega();
+		// }
+		.full {
+			@include fill-parent;
+			height: 50%;
+			background: $white;
+			display: block;
+			padding-bottom: .25rem;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover !important;
+		}
+		.bottom {
+			width: 50%;
+			height: 50%;
+			background: $white;
+			display: block;
+			vertical-align: top;
+			border-top: .5rem solid $base-body-color;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover !important;
+			float: left;
+			&:first-of-type {
+				border-right: .5rem solid $base-body-color;
+			}
+			&:last-of-type {
+				border-left: .5rem solid $base-body-color;
+			}
+		}
+	}
+	// spreads
+	figure.spread {
+		@include span-columns(14);
+		@include shift(1);
+		min-height: 464px;
+		height: auto;
+		position: relative;
+		.spread-image {
+			height: 100%;
+			width: 100%;
+			min-height: 464px;
+			position: relative;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover !important;
+		}
+		img, .spread-image {
+			position: relative;
+			display: block;
+			// &:after {
+			// 	content: '';
+			// 	width: 100%;
+			// 	height: 100%;
+			// 	position: absolute;
+			// 	z-index: $top-tier;
+			// 	background-image: -o-linear-gradient(-89deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.16) 100%);
+			// 	background-image: -moz-linear-gradient(-89deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.16) 100%);
+			// 	background-image: -ms-linear-gradient(-89deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.16) 100%);
+			// 	background-image: linear-gradient(-179deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.16) 100%);			
+			// }
+		}
+		&:hover {
+			.info {
+				opacity: 1;
+				// @include transition(opacity .2s $ease-in-out-quad);
+			}
+		}
+		.info {
+			position: relative;
+			bottom: 0;
+			right: 0;
+			// margin: 0 1em;
+			margin-right: 0;
+			color: $white;
+			background: $black;
+			@include fill-parent();
+			display: block;
+			padding: 1rem;
+			// opacity: 0;
+			// @include transition(opacity .2s $ease-in-out-quad);
+		}
+	}
+	// the text
+	aside {
+		@include span-columns(7);
+		height: 464px;
+		padding: 2rem;
+		position: relative;
+		h2 {
+			margin-top: $base-line-height;
+			color: $light-black;
+		}
+		p {
+			margin-top: $base-line-height;
+			font-family: $base-font-family;
+			color: $smoke-gray;
+		}
+		button, .button {
+			@include button-default($base-accent-color, $base-border-radius, 48px, outline);
+			min-width: em(160, 16);
+			font-size: $base-font-size;
+			margin-top: 2rem;
+			position: absolute;
+			right: 1rem;
+			bottom: 0;
+			text-align: center;
+			@include media($small) {
+				margin-top: 2rem;
+			}
+		}
+	}
+}
+
+// // mailchimp
+// .mc-response {
+// 	display: block;
+// 	width: 100%;
+// 	clear: both;
+// 	@include clearfix();
+// 	margin-bottom: $base-line-height/2;
+// }
+// .mc-error .mc-response {
+// 	@extend .notify; 
+// 	@extend .notify-oops;
+// }
+// .mc-success .mc-response {
+// 	@extend .notify; 
+// 	@extend .notify-success;
+// }

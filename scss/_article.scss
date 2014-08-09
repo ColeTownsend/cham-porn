@@ -1,0 +1,149 @@
+.letter, .essay, .photoblog {
+	position: relative;
+	min-height: 100%;
+	min-height: 480px;
+}
+
+header[role="article-head"] {
+	margin-top: $base-line-height;
+	margin-bottom: $base-line-height*2;
+	@include span-columns(6);
+	@include shift(5);
+	float: none;
+	display: inline-block;
+	text-align: center;
+	h6 {
+		color: $medium-gray;
+		margin-bottom: $base-line-height;
+	}
+}
+
+.letter, .essay, .photoblog {
+	p {
+		@include span-columns(7);
+		@include shift(4.5);
+		&:first-of-type, &:last-of-type {
+			@include clearfix();
+		}
+		&:last-of-type {
+			margin-bottom: $base-line-height;
+		}
+		img {
+			padding: .25rem 1rem;
+			padding-left: 0;
+		}
+	}
+}
+
+// photoblog
+.photoblog {
+	figure {
+		@include span-columns(12);
+		@include shift(2);
+		position: relative;
+		padding-bottom: 1.5rem;
+		&:before {
+				content: '';
+				z-index: $mid-tier;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				left: 50%;
+				margin-left: -1rem;
+				@include triangle(2rem, $white, down);
+		}
+		&:after {
+			content: '';
+			z-index: $top-tier;
+			position: absolute;
+			bottom: .5rem;
+			left: 0;
+			left: 50%;
+			margin-left: -.5rem;
+			@include triangle(1em, $black, down);
+		}
+		img {
+			width: 100%;
+			margin: 0;
+			max-width: 100%;
+			position: relative;
+			z-index: 1;
+		}
+		figcaption {
+			padding: 2em;
+			font-size: $fs4;
+			-webkit-font-smoothing: antialiased;
+			font-family: $body;
+			display: block;
+			text-align: center;
+			margin: 0 auto;
+			position: relative;
+			&.edgy {
+				position: absolute;
+				right: -1.5rem;
+				top: -1.5rem;
+				background: $white;
+				text-align: right;
+				border: 8px solid $base-body-color;
+			}
+		}
+	}
+	img {
+		@include span-columns(12);
+		@include shift(2);
+		max-width: 100%;
+	}
+}
+
+// essays and letters
+.essay, .letter {
+	img {
+		@include span-columns(8);
+		height: auto;
+		padding: $base-line-height/4 0;
+		padding-right: .5rem;
+	}
+	img + p {
+		@include span-columns(3.5);
+		@include shift(0);
+		@include omega();
+		margin-left: -1rem;
+	}
+	img + p + img {
+		clear: left;
+		@include shift(2);
+		margin-right: 1rem;
+	}
+	img ~ img {
+		@include clearfix();
+		margin-left: 0;
+		@include span-columns(6);
+		padding: 0;
+		margin-top: $base-line-height;
+		&+p {
+			@include span-columns(7);
+			@include shift(4.5);
+			margin-top: $base-line-height;
+		}
+	}
+}
+
+
+// Letter
+.signature {
+	display: none;
+}
+
+.letter {
+	.signature {
+		@include clearfix();
+		clear: both;
+		padding: 0;
+		display: block;
+		width: auto;
+		float: none;
+		margin: $base-line-height auto !important;
+	}
+}
+
+

@@ -1,0 +1,1 @@
+Modernizr.addTest("backgroundclip",function(){var e=document.createElement("div");return"backgroundClip"in e.style?!0:void"Webkit Moz O ms Khtml".replace(/([A-Za-z]*)/g,function(n){return n+"BackgroundClip"in e.style?!0:void 0})});
